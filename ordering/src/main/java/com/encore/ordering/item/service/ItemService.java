@@ -48,7 +48,7 @@ public class ItemService {
             log.info("이미지 추가");
             MultipartFile multipartFile = itemRequest.getItemImage();
             String fileName = multipartFile.getOriginalFilename(); // 확장자 포함한 파일명 추출
-            Path path = Paths.get("C:/Users/Playdata/OneDrive/바탕 화면/tmp/", item.getId() + "_" + fileName);
+            Path path = Paths.get("/tmp/", item.getId() + "_" + fileName);
             item.setImagePath(path.toString());
             try {
                 byte[] bytes = multipartFile.getBytes(); // 이미지 파일을 바이트로 변환
